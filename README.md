@@ -30,13 +30,18 @@ Now, the python script adds the file location to the system path, so we are read
 To collect the data, first, the configuration file needed to be adjusted. There are different types of drivers implemented, the one with the most control is the "manual" driver. Data recording must be enabled and the name of the folder must be specified as to where to save the data. By default RGB camera + depth camera images will be saved in png format, on a resolution of 320x240.
 
 >#set driving mode
+>
 >driver.set_driver_type(driver.manual)
+>
 >#record data
+>
 >record_data = True
 >#use out dir, to append to the "out" directory, the location to store recording
 >#use this for multiple scenario records, to organize your recordings
+>
 >out_dir = "/map_uuu_x_2/"
 >#database name
+>
 >db_name = '_info.rec'
 
 Now, the CARLA server can be started using `run_carla.sh` after the desired parameters were updated in the file. To collect the data, the auto_pilot.py script is needed to be started, after a successful connection, the `RGB_Cam` window will appear. This is important while capturing the keyboard, and commands can be exchanged with the server. Use `w a s d q` keys to control the car, `4 8 6 5` to label the direction and `r` to toggle the recording.
@@ -59,7 +64,9 @@ A significant amount (min 15k samples) of data is needed to be collected to have
 To retrain the DNN use the `auto_pilot.ipynb` file. In the first step the right folder, files are needed to be configured.
 
 >path='./out/map/*/_info.rec'
+>
 >val_path='./out/map_val/*/_info.rec'
+>
 >out_net = './ap.h5'
 
 This is basically what is needed, and the retraining can start. In case the dataset is very unbalanced, built-in filtering functions can be used to undersample/oversample the majority respectively the minority classes. Basic augmentation is also possible, read in `auto_pilot.ipynb` file the details.
