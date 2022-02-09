@@ -30,14 +30,11 @@ To collect the data, first, the configuration file needed to be adjusted. There 
 
 > #set driving mode
 > driver.set_driver_type(driver.manual)
-
->#record data
->record_data = True
-
+> #record data
+> record_data = True
 > #use out dir, to append to the "out" directory, the location to store recording
 > #use this for multiple scenario records, to organize your recordings
 > out_dir = "/map_uuu_x_2/"
-
 > #database name
 > db_name = '_info.rec'
 
