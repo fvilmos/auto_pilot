@@ -36,7 +36,7 @@ To collect the data, first, the configuration file needed to be adjusted. There 
 
 > #use out dir, to append to the "out" directory, the location to store recording
 > #use this for multiple scenario records, to organize your recordings
->out_dir = "/map_uuu_x_2/"
+> out_dir = "/map_uuu_x_2/"
 
 > #database name
 > db_name = '_info.rec'
@@ -60,9 +60,9 @@ A significant amount (min 15k samples) of data is needed to be collected to have
 
 To retrain the DNN use the `auto_pilot.ipynb` file. In the first step the right folder, files are needed to be configured.
 
->path='./out/map/*/_info.rec'
->val_path='./out/map_val/*/_info.rec'
->out_net = './ap.h5'
+> path='./out/map/*/_info.rec'
+> val_path='./out/map_val/*/_info.rec'
+> out_net = './ap.h5'
 
 This is basically what is needed, and the retraining can start. In case the dataset is very unbalanced, built-in filtering functions can be used to undersample/oversample the majority respectively the minority classes. Basic augmentation is also possible, read in `auto_pilot.ipynb` file the details.
 
