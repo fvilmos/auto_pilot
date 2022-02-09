@@ -28,18 +28,18 @@ Now, the python script adds the file location to the system path, so we are read
 ### Collect the training data
 To collect the data, first, the configuration file needed to be adjusted. There are different types of drivers implemented, the one with the most control is the "manual" driver. Data recording must be enabled and the name of the folder must be specified as to where to save the data. By default RGB camera + depth camera images will be saved in png format, on a resolution of 320x240.
 
->#set driving mode
->driver.set_driver_type(driver.manual)
+> #set driving mode
+> driver.set_driver_type(driver.manual)
 
 >#record data
 >record_data = True
 
->#use out dir, to append to the "out" directory, the location to store recording
->#use this for multiple scenario records, to organize your recordings
+> #use out dir, to append to the "out" directory, the location to store recording
+> #use this for multiple scenario records, to organize your recordings
 >out_dir = "/map_uuu_x_2/"
 
->#database name
->db_name = '_info.rec'
+> #database name
+> db_name = '_info.rec'
 
 Now, the CARLA server can be started using `run_carla.sh` after the desired parameters were updated in the file. To collect the data, the auto_pilot.py script is needed to be started, after a successful connection, the `RGB_Cam` window will appear. This is important while capturing the keyboard, and commands can be exchanged with the server. Use `w a s d q` keys to control the car, `4 8 6 5` to label the direction and `r` to toggle the recording.
 
@@ -67,7 +67,7 @@ To retrain the DNN use the `auto_pilot.ipynb` file. In the first step the right 
 This is basically what is needed, and the retraining can start. In case the dataset is very unbalanced, built-in filtering functions can be used to undersample/oversample the majority respectively the minority classes. Basic augmentation is also possible, read in `auto_pilot.ipynb` file the details.
 
 To load all the data without filtering, use:
->filters=[lambda x:True]
+> filters=[lambda x:True]
 >
 Complex querris can be constructed, using the data structure descibed above, like:
 > filters = [lambda x: True if x['steer']==0.0 and x['index'] % 180 == 0 else False,
@@ -83,10 +83,10 @@ Complex querris can be constructed, using the data structure descibed above, lik
 ### Run simulation with DNN
 
 To run a trained network use the `auto_pilot.py` script. A first step, ensure that the right driver type is selected, and the recording is inactive in the `utils/config.py` file.
->driver.set_driver_type(driver.inference)
->record_data = False
+> driver.set_driver_type(driver.inference)
+> record_data = False
 
-Run the CARLA server (`run_carla.sh`), followed by the `auto_pilot.py` execution.
+Run the CARLA server (`run_carla.sh`), followed by the `auto_pilot.py` execution. Use `w a s d q` keys to interact with the car, or `4 8 6 5` to provide the `direction` command for the DNN.
 
 /Enjoy.
 
