@@ -90,6 +90,7 @@ Complex querris can be constructed, using the data structure descibed above, lik
 To run a trained network use the `auto_pilot.py` script. A first step, ensure that the right driver type is selected, and the recording is inactive in the `utils/config.py` file.
 
 >driver.set_driver_type(driver.inference)
+>
 >record_data = False
 
 Run the CARLA server (`run_carla.sh`), followed by the `auto_pilot.py` execution. Use `w a s d q` keys to interact with the car, or `4 8 6 5` to provide the `direction` command for the DNN.
