@@ -21,6 +21,7 @@ Then the CARLA python package is needed, but before CARLA[2] needed to be instal
 
 
 >#location of CARLA egg file
+>
 >egg_file_abs_path = './carla-0.9.12-py3.7-linux-x86_64.egg
 
 Now, the python script adds the file location to the system path, so we are ready to go...
