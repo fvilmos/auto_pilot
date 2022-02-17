@@ -95,9 +95,6 @@ To run a trained network use the `auto_pilot.py` script. A first step, ensure th
 
 Run the CARLA server (`run_carla.sh`), followed by the `auto_pilot.py` execution. Use `w a s d q` keys to interact with the car, or `4 8 6 5` to provide the `direction` command for the DNN.
 
-/Enjoy.
-
-
 ### Links
 
 1. [Bojarski et all: End to End Learning for Self-Driving Cars](https://arxiv.org/pdf/1604.07316.pdf)
